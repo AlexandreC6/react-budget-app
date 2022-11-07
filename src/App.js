@@ -40,24 +40,25 @@ function App() {
             gap: "1rem",
             alignItems: "flex-start",
           }}
-        ></div>
-        {budgets.map((budget) => {
-          const amount = getBudgetExpenses(budget.id).reduce(
-            (total, expense) => total + expense.amount,
-            0
-          );
+        >
+          {budgets.map((budget) => {
+            const amount = getBudgetExpenses(budget.id).reduce(
+              (total, expense) => total + expense.amount,
+              0
+            );
 
-          return (
-            <BudgetCard
-              key={budget.id}
-              name={budget.name}
-              amount={amount}
-              max={budget.max}
-              onAddExpenseClick={() => openAddExpenseModal(budget.id)}
-              onViewExpensesClick={() => setViewExpensesModalId(budget.id)}
-            />
-          );
-        })}
+            return (
+              <BudgetCard
+                key={budget.id}
+                name={budget.name}
+                amount={amount}
+                max={budget.max}
+                onAddExpenseClick={() => openAddExpenseModal(budget.id)}
+                onViewExpensesClick={() => setViewExpensesModalId(budget.id)}
+              />
+            );
+          })}
+        </div>
         <UncategorizedBudgetCard
           onAddExpenseClick={openAddExpenseModal}
           onViewExpensesClick={() =>
