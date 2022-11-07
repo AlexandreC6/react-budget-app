@@ -6,11 +6,11 @@ export default function BudgetCard({ name, amount, max, gray }) {
     if(amount > max) {
       classNames.push('bg-danger', 'bg-opacity-10')
     } else if(gray) {
-      classNames.push("bg-light")
+      classNames.push("bg-light",)
     }
 
   return (
-    <Card className={classNames.join(" ")}>
+    <Card className={classNames.join(" ") || "mb-4"}>
       <Card.Body>
         <Card.Title className="d-flex justify-content-between align-items-baseline fw-normal mb-3">
           <div className="me-2">{name}</div>
