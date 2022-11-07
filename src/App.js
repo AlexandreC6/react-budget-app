@@ -58,14 +58,14 @@ function App() {
               />
             );
           })}
+          <UncategorizedBudgetCard
+            onAddExpenseClick={openAddExpenseModal}
+            onViewExpensesClick={() =>
+              setViewExpensesModalId(UNCATEGORIZED_BUDGET_ID)
+            }
+          />
+          <TotalBudgetCard />
         </div>
-        <UncategorizedBudgetCard
-          onAddExpenseClick={openAddExpenseModal}
-          onViewExpensesClick={() =>
-            setViewExpensesModalId(UNCATEGORIZED_BUDGET_ID)
-          }
-        />
-        <TotalBudgetCard />
       </Container>
       <AddBudgetModal
         show={showAddBudgetModal}
